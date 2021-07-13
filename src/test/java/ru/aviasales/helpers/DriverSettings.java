@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.aviasales.config.Project;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,6 +14,8 @@ public class DriverSettings {
         Configuration.browser = Project.config.browser();
         Configuration.browserVersion = Project.config.browserVersion();
         Configuration.browserSize = Project.config.browserSize();
+        Configuration.baseUrl = Project.config.baseUrl();
+
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
