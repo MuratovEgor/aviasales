@@ -13,6 +13,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;
 import ru.aviasales.helpers.DriverUtils;
 
+import static com.codeborne.selenide.Selenide.open;
+
 
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
@@ -20,6 +22,7 @@ public class TestBase {
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DriverSettings.configure();
+        open("/");
     }
 
     @AfterEach
