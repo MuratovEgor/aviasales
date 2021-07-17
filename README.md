@@ -56,4 +56,3 @@ allure serve build/allure-results
 ## Видео прохождения тестов, взятое из среды выполнения (из Selenoid) <a href="https://www.jetbrains.com/idea/"><img src="https://starchenkov.pro/qa-guru/img/skills/Selenoid.svg" width="40" height="40"  alt="Selenoid"/></a>
 
 ![alt "Video from Selenoid"](./images/Video.gif "Video from Selenoid")
-{"mode":"full","isActive":false}
