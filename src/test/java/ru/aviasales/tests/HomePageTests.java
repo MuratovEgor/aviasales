@@ -1,9 +1,7 @@
 package ru.aviasales.tests;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.aviasales.helpers.CommonSteps;
 import ru.aviasales.pages.HomePage;
 
 public class HomePageTests extends TestBase {
@@ -13,14 +11,7 @@ public class HomePageTests extends TestBase {
             linkShowBasicForm = "Вернуться к простому маршруту",
             from = "Москва",
             to = "Лондон";
-    CommonSteps commonSteps = new CommonSteps();
     HomePage homePage = new HomePage();
-
-
-    @BeforeEach
-    void openPage() {
-        commonSteps.openPage("/");
-    }
 
 
     @Test
