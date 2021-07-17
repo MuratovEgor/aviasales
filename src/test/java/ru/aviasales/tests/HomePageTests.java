@@ -1,5 +1,6 @@
 package ru.aviasales.tests;
 
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.aviasales.helpers.CommonSteps;
@@ -20,6 +21,7 @@ public class HomePageTests extends TestBase {
     }
 
     @Test
+    @Description("Проверка заголовка страницы")
     void checkPageTitle() {
         homePage.checkPageTitle(title);
     }
