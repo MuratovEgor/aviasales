@@ -10,7 +10,9 @@ public class HomePageTests extends TestBase {
 
     String title = "Поиск дешёвых авиабилетов",
             linkShowMultiWayForm = "Составить сложный маршрут",
-            linkShowBasicForm = "Вернуться к простому маршруту";
+            linkShowBasicForm = "Вернуться к простому маршруту",
+            from = "Москва",
+            to = "Лондон";
     CommonSteps commonSteps = new CommonSteps();
     HomePage homePage = new HomePage();
 
@@ -48,5 +50,25 @@ public class HomePageTests extends TestBase {
 
         homePage.chekTextByLinkBasicChangeForm(linkShowBasicForm);
         homePage.clickByLinkShowBasicChangeForm();
+    }
+
+    @Test
+    @DisplayName("При попытке найти билеты без указания даты отображается ошибка")
+    void searchTicketWithoutDateOfDeparture() {
+        homePage.typeFrom(from);
+        homePage.typeTo(to);
+        homePage.clickBtnSubmit();
+
+        homePage.checkErrorMessageOverInputDeparture();
+    }
+
+    @Test
+    @DisplayName("Если не указан место отправления то отображается ошибка")
+    void searchTicketWithoutFrom() {
+        homePage.typeFrom("");
+        homePage.clickBtnSubmit();
+
+        homePage.checkErrorMessageOverInputFrom();
+
     }
 }
