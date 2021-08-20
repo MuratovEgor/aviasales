@@ -2,24 +2,20 @@ package ru.aviasales.tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.aviasales.helpers.CommonSteps;
 import ru.aviasales.helpers.DriverUtils;
 
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ConsoleLogTest extends TestBase {
-    CommonSteps commonSteps = new CommonSteps();
-
+public class ConsoleTests {
     @Test
-    @DisplayName("В консоли нет ошибок")
+    @DisplayName("Page console log should not have errors")
     void consoleShouldNotHaveErrorsTest() {
+        step("Open url 'https://aviasales.ru/'", () ->
+                open("https://aviasales.ru/"));
 
-
-        commonSteps.openPage("/");
-
-
-        step("В консоли нет ошибок типа 'SEVERE'", () -> {
+        step("Console logs should not contain text 'SEVERE'", () -> {
             String consoleLogs = DriverUtils.getConsoleLogs();
             String errorText = "SEVERE";
 
